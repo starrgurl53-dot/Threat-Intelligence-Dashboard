@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Threat Intelligence Dashboard</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <div class="top-bar">
+        <header>
+            <h1>THREAT INTELLIGENCE DASHBOARD</h1>
+            <p>Cybersecurity Threat Monitoring System</p>
+        </header>
+
+        <nav>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/threats">Threat Intelligence</a>
+            <a href="/add">Add Intelligence</a>
+        </nav>
+    </div>
+
+    <main>
+        <h2 class="page-title">Dashboard Overview</h2>
+
+        <p class="intro">
+            Welcome to your central platform for collecting,
+            storing and managing cybersecurity threat intelligence.
+        </p>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Threat Actors</h3>
+                <h2 id="actorCount">0</h2>
+            </div>
+
+            <div class="card">
+                <h3>Malware Records</h3>
+                <h2 id="malwareCount">0</h2>
+            </div>
+
+            <div class="card">
+                <h3>Indicators of Compromise</h3>
+                <h2 id="iocCount">0</h2>
+            </div>
+        </div>
+
+        <section class="analytics-section">
+            <h2>Threat Analytics</h2>
+            <p>Overview of recorded threats by category and severity.</p>
+            <div id="analyticsContainer">
+                <p>Loading analytics...</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>About the Dashboard</h2>
+            <p>
+                This system provides a centralised platform for
+                managing cybersecurity threat information.
+            </p>
+            <p>
+                Navigate to Threat Intelligence to view existing
+                records or Add Intelligence to register new records.
+            </p>
+        </section>
+    </main>
+
+
+    <footer class="site-footer">
+        <p>Designed & Developed by <strong>Oyathelemhi Stephanie</strong></p>
+        <span>SIWES Project • 2026</span>
+    </footer>
+
+
+    <script src="/script.js"></script>
+</body>
+
+</html>

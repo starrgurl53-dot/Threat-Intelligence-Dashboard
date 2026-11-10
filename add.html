@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Threat Intelligence</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <header class="top-bar">
+        <div>
+            <h1>THREAT INTELLIGENCE DASHBOARD</h1>
+            <p>Cybersecurity Threat Records</p>
+        </div>
+
+        <nav>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/threats">Threat Intelligence</a>
+            <a href="/add" class="active">Add Intelligence</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="page-heading">
+            <h2>Submit Threat Intelligence</h2>
+            <p>Contribute useful information about cybersecurity threats.</p>
+        </section>
+
+        <p id="submissionMessage"></p>
+
+        <div class="add-layout">
+            <section class="add-forms">
+
+                <div class="add-form-card">
+                    <h3>Threat Actor</h3>
+                    <form id="actorForm" onsubmit="submitRecord(event, 'Threat Actor')">
+                        <label for="actorName">Name</label>
+                        <input type="text" id="actorName" name="name" required>
+
+                        <label for="actorDescription">Description</label>
+                        <textarea id="actorDescription" name="description" required></textarea>
+
+                        <label for="actorCountry">Country</label>
+                        <input type="text" id="actorCountry" name="country" required>
+
+                        <label for="actorSeverity">Severity</label>
+                        <select id="actorSeverity" name="severity" required>
+                            <option value="">Select severity</option>
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                            <option value="Critical">Critical</option>
+                        </select>
+
+                        <label for="actorSource">Source</label>
+                        <input type="url" id="actorSource" name="source" required>
+
+                        <button type="submit">Submit Threat Actor</button>
+                    </form>
+                </div>
+
+                <div class="add-form-card">
+                    <h3>Malware</h3>
+                    <form id="malwareForm" onsubmit="submitRecord(event, 'Malware')">
+                        <label for="malwareName">Name</label>
+                        <input type="text" id="malwareName" name="name" required>
+
+                        <label for="malwareType">Type</label>
+                        <input type="text" id="malwareType" name="type" required>
+
+                        <label for="malwareDescription">Description</label>
+                        <textarea id="malwareDescription" name="description" required></textarea>
+
+                        <label for="malwareSeverity">Severity</label>
+                        <select id="malwareSeverity" name="severity" required>
+                            <option value="">Select severity</option>
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                            <option value="Critical">Critical</option>
+                        </select>
+
+                        <label for="malwareSource">Source</label>
+                        <input type="url" id="malwareSource" name="source" required>
+
+                        <button type="submit">Submit Malware</button>
+                    </form>
+                </div>
+
+                <div class="add-form-card">
+                    <h3>Indicator of Compromise</h3>
+                    <form id="iocForm" onsubmit="submitRecord(event, 'IOC')">
+                        <label for="iocValue">IOC Value</label>
+                        <input type="text" id="iocValue" name="value" required>
+
+                        <label for="iocType">IOC Type</label>
+                        <select id="iocType" name="type" required>
+                            <option value="">Select IOC type</option>
+                            <option value="IP Address">IP Address</option>
+                            <option value="Domain">Domain</option>
+                            <option value="URL">URL</option>
+                            <option value="File Hash">File Hash</option>
+                            <option value="Email Address">Email Address</option>
+                            <option value="Other">Other</option>
+                        </select>
+
+                        <label for="iocDescription">Description</label>
+                        <textarea id="iocDescription" name="description" required></textarea>
+
+                        <label for="iocSeverity">Severity</label>
+                        <select id="iocSeverity" name="severity" required>
+                            <option value="">Select severity</option>
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                            <option value="Critical">Critical</option>
+                        </select>
+
+                        <label for="iocSource">Source</label>
+                        <input type="url" id="iocSource" name="source" required>
+
+                        <button type="submit">Submit IOC</button>
+                    </form>
+                </div>
+
+            </section>
+
+            <aside class="intelligence-guide">
+                <h3>Submission Guide</h3>
+                <p>Before submitting threat intelligence, ensure that the information is accurate and supported by a
+                    reliable source.</p>
+
+                <div>
+                    <h4>Threat Actor</h4>
+                    <p>Information about individuals or groups responsible for cyberattacks.</p>
+                </div>
+
+                <div>
+                    <h4>Malware</h4>
+                    <p>Information about malicious software designed to disrupt, damage or gain unauthorized access to
+                        systems.</p>
+                </div>
+
+                <div>
+                    <h4>Indicator of Compromise</h4>
+                    <p>Technical evidence that may indicate a system or network has been compromised.</p>
+                </div>
+
+                <div>
+                    <h4>Important</h4>
+                    <p>Provide a valid source link for every submission. Submitted records may require administrator
+                        approval before appearing on the dashboard.</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+
+    <footer class="site-footer">
+        <p>Designed & Developed by <strong>Oyathelemhi Stephanie</strong></p>
+        <span>SIWES Project • 2026</span>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+
+</html>

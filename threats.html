@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Threat Intelligence</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <header class="top-bar">
+        <div>
+            <h1>THREAT INTELLIGENCE DASHBOARD</h1>
+            <p>Cybersecurity Threat Records</p>
+        </div>
+
+        <nav>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/threats" class="active">Threat Intelligence</a>
+            <a href="/add">Add Intelligence</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="page-heading">
+            <h2>Threat Intelligence Records</h2>
+            <p>Explore and filter available threat intelligence records.</p>
+        </section>
+
+        <section class="filter-section">
+            <input type="text" id="searchInput" placeholder="Search threat records...">
+
+            <select id="categoryFilter">
+                <option value="All">All Categories</option>
+                <option value="Threat Actor">Threat Actors</option>
+                <option value="Malware">Malware</option>
+                <option value="IOC">Indicators of Compromise</option>
+            </select>
+
+            <select id="severityFilter">
+                <option value="All">All Severities</option>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+                <option value="Critical">Critical</option>
+            </select>
+
+            <input type="date" id="dateFilter">
+
+            <button type="button" id="clearFilters">Clear Filters</button>
+            <button type="button" id="exportButton">Export CSV</button>
+        </section>
+
+        <section class="table-section">
+            <h3>Threat Actors</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Country</th>
+                            <th>Severity</th>
+                            <th>Date Added</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="actorsTable"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="table-section">
+            <h3>Malware Records</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                            <th>Severity</th>
+                            <th>Date Added</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="malwareTable"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="table-section">
+            <h3>Indicators of Compromise</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Value</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                            <th>Severity</th>
+                            <th>Date Added</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="iocsTable"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="site-footer">
+        <p>Designed & Developed by <strong>Oyathelemhi Stephanie</strong></p>
+        <span>SIWES Project • 2026</span>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrator Panel</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <div class="top-bar">
+        <header>
+            <h1>THREAT INTELLIGENCE DASHBOARD</h1>
+            <p>Administrator Control Panel</p>
+        </header>
+
+        <nav>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/threats">Threat Intelligence</a>
+            <a href="/add">Add Intelligence</a>
+        </nav>
+    </div>
+
+    <main>
+
+        <div class="admin-page">
+
+            <div class="admin-card">
+                <div class="admin-icon">🛡️</div>
+
+                <h2 id="adminTitle">Administrator Login</h2>
+
+                <p id="adminDescription">
+                    Sign in to manage threat intelligence submissions.
+                </p>
+
+                <form id="adminForm">
+                    <label for="adminUsername">Username</label>
+                    <input type="text" id="adminUsername" placeholder="Enter username" minlength="3" maxlength="40"
+                        required>
+
+                    <label for="adminPassword">Password</label>
+                    <input type="password" id="adminPassword" placeholder="Enter password" minlength="8" maxlength="128"
+                        required>
+
+                    <button type="submit" id="adminSubmit">Login</button>
+                </form>
+
+                <p id="adminMessage" class="admin-message"></p>
+
+                <div id="adminLoggedIn" hidden>
+                    <p class="admin-success">
+                        You are signed in as an administrator.
+                    </p>
+
+                    <button type="button" id="logoutButton" class="delete-btn">
+                        Logout
+                    </button>
+
+                    <button type="button" id="backupButton" class="export-btn">
+                        Back Up Database
+                    </button>
+                </div>
+
+                <a href="/dashboard" class="back-link">
+                    Return to Dashboard
+                </a>
+            </div>
+
+            <div class="admin-info">
+                <h3>Administrator Responsibilities</h3>
+
+                <p>As an administrator, you can:</p>
+
+                <ul>
+                    <li>Review new intelligence submissions.</li>
+                    <li>Check supporting sources and references.</li>
+                    <li>Approve or reject submissions.</li>
+                    <li>Edit or delete approved records.</li>
+                </ul>
+
+                <p class="security-note">
+                    Only reviewed and approved information is published
+                    in the main threat intelligence records.
+                </p>
+            </div>
+
+        </div>
+
+
+        <section id="reviewSection" hidden>
+
+            <div class="review-heading">
+                <div>
+                    <h2>Submission Review Centre</h2>
+                    <p>Review and manage submitted threat intelligence.</p>
+                </div>
+
+                <button type="button" id="refreshSubmissions" class="export-btn">
+                    Refresh Submissions
+                </button>
+            </div>
+
+            <div class="review-counts">
+                <div class="review-count">
+                    <span>Pending</span>
+                    <strong id="pendingCount">0</strong>
+                </div>
+
+                <div class="review-count">
+                    <span>Approved</span>
+                    <strong id="approvedCount">0</strong>
+                </div>
+
+                <div class="review-count">
+                    <span>Rejected</span>
+                    <strong id="rejectedCount">0</strong>
+                </div>
+            </div>
+
+            <div class="review-filter">
+                <label for="submissionStatus">View submissions</label>
+
+                <select id="submissionStatus">
+                    <option value="Pending">Pending Review</option>
+                    <option value="Approved">Approved</option>
+                    <option value="Rejected">Rejected</option>
+                </select>
+            </div>
+
+            <div id="submissionList" class="submission-list">
+                <p>Loading submissions...</p>
+            </div>
+
+        </section>
+
+        <section class="activity-section">
+            <div class="review-heading">
+                <div>
+                    <h2>Administrator Activity Log</h2>
+                    <p>Track actions performed on the dashboard.</p>
+                </div>
+            </div>
+
+            <div id="activityList" class="activity-list">
+                <p>No administrator activity yet.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="/script.js"></script>
+</body>
+
+</html>
